@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="نموذج صفحة هبوط عربية لعيادة أسنان — تصميم متجاوب وسريع من إعداد شادي.">
+<title>عيادات بسمة | ابتسامتك تبدأ من هنا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --petrol:#0d4a4e;
+  --teal:#1a7f86;
+  --mint:#cfeae7;
+  --mint-soft:#eef8f6;
+  --cream:#fbfdfc;
+  --gold:#e0a458;
+  --ink:#123033;
+  --gray:#5c7375;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Tajawal',sans-serif;background:var(--cream);color:var(--ink);line-height:1.75;overflow-x:hidden}
+h1,h2,h3{font-family:'Readex Pro',sans-serif;line-height:1.3;font-weight:600}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+a{text-decoration:none;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+/* Nav */
+nav{position:fixed;top:0;right:0;left:0;z-index:100;background:rgba(251,253,252,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--mint);transition:.3s}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Readex Pro';font-weight:700;font-size:1.35rem;color:var(--petrol)}
+.logo-mark{width:38px;height:38px;background:var(--petrol);border-radius:50% 50% 50% 6px;display:grid;place-items:center;color:#fff;font-size:1.1rem}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.98rem;color:var(--gray);font-weight:500;transition:.2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{background:var(--petrol);color:#fff!important;padding:11px 24px;border-radius:40px;font-weight:700!important;font-size:.95rem;transition:.25s}
+.nav-cta:hover{background:var(--teal);transform:translateY(-2px)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+.burger span{width:26px;height:2.5px;background:var(--petrol);border-radius:2px;transition:.3s;display:block}
+.burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* Mobile menu panel */
+.mobile-menu{display:none;flex-direction:column;background:var(--cream);border-top:1px solid var(--mint);padding:10px 24px 22px;box-shadow:0 20px 40px rgba(13,74,78,.1)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:14px 4px;font-size:1.05rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--mint-soft)}
+.mobile-menu a:last-child{border-bottom:none;background:var(--petrol);color:#fff;text-align:center;border-radius:40px;margin-top:14px;font-weight:700}
+
+/* Hero */
+.hero{padding:150px 0 90px;position:relative;background:
+  radial-gradient(1000px 600px at 85% -10%,var(--mint) 0%,transparent 55%),
+  radial-gradient(700px 500px at 5% 110%,var(--mint-soft) 0%,transparent 60%),var(--cream)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--mint);color:var(--teal);padding:7px 16px;border-radius:40px;font-size:.85rem;font-weight:700;margin-bottom:24px;box-shadow:0 6px 20px rgba(13,74,78,.06)}
+.pill .dot{width:8px;height:8px;background:#3ec98a;border-radius:50%;box-shadow:0 0 0 4px rgba(62,201,138,.2)}
+.hero h1{font-size:3.35rem;color:var(--petrol);letter-spacing:-.5px;margin-bottom:22px;font-weight:700}
+.hero h1 em{font-style:normal;color:var(--teal);position:relative;white-space:nowrap;display:inline-block}
+.hero h1 em::after{content:"";position:absolute;right:0;left:0;bottom:6px;height:12px;background:var(--gold);opacity:.35;border-radius:4px}
+.hero h1 em span{position:relative;z-index:1}
+.hero p{font-size:1.18rem;color:var(--gray);max-width:520px;margin-bottom:34px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:15px 30px;border-radius:44px;font-weight:700;font-size:1rem;cursor:pointer;border:none;transition:.25s;display:inline-flex;align-items:center;gap:9px;font-family:'Tajawal'}
+.btn-main{background:var(--petrol);color:#fff;box-shadow:0 14px 30px rgba(13,74,78,.28)}
+.btn-main:hover{background:var(--teal);transform:translateY(-3px);box-shadow:0 18px 36px rgba(26,127,134,.32)}
+.btn-ghost{background:#fff;color:var(--petrol);border:1.5px solid var(--mint)}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+.hero-trust{display:flex;gap:30px;margin-top:40px;flex-wrap:wrap}
+.hero-trust b{display:block;font-family:'Readex Pro';font-size:1.7rem;color:var(--petrol);font-weight:700}
+.hero-trust span{font-size:.9rem;color:var(--gray)}
+
+.hero-card{position:relative}
+.hero-visual{background:linear-gradient(160deg,var(--teal),var(--petrol));border-radius:32px;padding:44px 38px;color:#fff;box-shadow:0 30px 60px rgba(13,74,78,.3);position:relative;overflow:hidden}
+.hero-visual::before{content:"";position:absolute;top:-60px;left:-60px;width:200px;height:200px;background:rgba(255,255,255,.08);border-radius:50%}
+.hero-visual h3{font-size:1.35rem;margin-bottom:6px;color:#fff}
+.hero-visual .sub{color:var(--mint);font-size:.95rem;margin-bottom:26px}
+.slot{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:14px 16px;margin-bottom:12px;transition:.2s}
+.slot:hover{background:rgba(255,255,255,.18)}
+.slot .ic{width:42px;height:42px;background:rgba(255,255,255,.16);border-radius:12px;display:grid;place-items:center;font-size:1.2rem;flex-shrink:0}
+.slot b{display:block;font-family:'Readex Pro';font-size:1rem}
+.slot small{color:var(--mint);font-size:.82rem}
+.float-badge{position:absolute;bottom:-22px;right:-18px;background:#fff;color:var(--petrol);border-radius:18px;padding:14px 20px;box-shadow:0 18px 40px rgba(13,74,78,.2);display:flex;align-items:center;gap:12px}
+.float-badge .stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px}
+.float-badge b{font-family:'Readex Pro';display:block}
+.float-badge small{color:var(--gray);font-size:.78rem}
+
+/* Section base */
+section{padding:90px 0}
+.eyebrow{display:inline-block;color:var(--teal);font-weight:700;font-size:.9rem;letter-spacing:1px;margin-bottom:14px}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 56px}
+.sec-head h2{font-size:2.5rem;color:var(--petrol);margin-bottom:14px}
+.sec-head p{color:var(--gray);font-size:1.1rem}
+
+/* Services */
+.services{background:var(--mint-soft)}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.serv-card{background:#fff;border:1px solid #e4f1ee;border-radius:22px;padding:34px 28px;transition:.3s}
+.serv-card:hover{transform:translateY(-8px);box-shadow:0 24px 48px rgba(13,74,78,.12);border-color:var(--mint)}
+.serv-ic{width:60px;height:60px;background:var(--mint);border-radius:16px;display:grid;place-items:center;font-size:1.7rem;margin-bottom:20px}
+.serv-card h3{font-size:1.28rem;color:var(--petrol);margin-bottom:10px}
+.serv-card p{color:var(--gray);font-size:.98rem}
+.serv-price{margin-top:16px;padding-top:16px;border-top:1px dashed var(--mint);font-family:'Readex Pro';color:var(--teal);font-weight:600}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.why-visual{background:linear-gradient(160deg,var(--mint),var(--mint-soft));border-radius:28px;padding:50px 40px;position:relative}
+.why-stat{background:#fff;border-radius:20px;padding:26px;margin-bottom:16px;display:flex;align-items:center;gap:20px;box-shadow:0 10px 30px rgba(13,74,78,.06)}
+.why-stat:last-child{margin-bottom:0}
+.why-stat .num{font-family:'Readex Pro';font-size:2.4rem;color:var(--teal);font-weight:700;min-width:90px}
+.why-stat span{color:var(--gray);font-weight:500}
+.why-list{list-style:none}
+.why-list li{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
+.why-list .check{width:32px;height:32px;background:var(--petrol);color:#fff;border-radius:50%;display:grid;place-items:center;flex-shrink:0;font-size:.9rem}
+.why-list b{display:block;font-family:'Readex Pro';color:var(--petrol);font-size:1.12rem;margin-bottom:3px}
+.why-list p{color:var(--gray);font-size:.98rem}
+.why-title{font-size:2.4rem;color:var(--petrol);margin-bottom:26px}
+
+/* Testimonials */
+.testi{background:var(--petrol);color:#fff}
+.testi .sec-head h2{color:#fff}
+.testi .sec-head p{color:var(--mint)}
+.testi .eyebrow{color:var(--gold)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:30px 26px}
+.testi-card .stars{color:var(--gold);letter-spacing:2px;margin-bottom:14px}
+.testi-card p{color:#e7f4f2;font-size:1rem;margin-bottom:22px}
+.testi-person{display:flex;align-items:center;gap:13px}
+.avatar{width:46px;height:46px;border-radius:50%;background:var(--teal);display:grid;place-items:center;font-family:'Readex Pro';font-weight:700;color:#fff}
+.testi-person b{display:block;font-family:'Readex Pro';font-size:.98rem}
+.testi-person small{color:var(--mint);font-size:.82rem}
+
+/* CTA / booking */
+.book{background:linear-gradient(160deg,var(--mint-soft),#fff)}
+.book-box{background:#fff;border:1px solid var(--mint);border-radius:32px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;box-shadow:0 30px 70px rgba(13,74,78,.1)}
+.book-box h2{font-size:2.3rem;color:var(--petrol);margin-bottom:14px}
+.book-box>div>p{color:var(--gray);font-size:1.08rem;margin-bottom:26px}
+.book-feat{display:flex;align-items:center;gap:12px;margin-bottom:14px;color:var(--ink);font-weight:500}
+.book-feat .ic{color:var(--teal);font-size:1.2rem}
+.form-field{margin-bottom:16px}
+.form-field label{display:block;font-size:.9rem;font-weight:700;color:var(--petrol);margin-bottom:7px}
+.form-field input,.form-field select{width:100%;padding:14px 16px;border:1.5px solid var(--mint);border-radius:14px;font-family:'Tajawal';font-size:1rem;background:var(--cream);transition:.2s}
+.form-field input:focus,.form-field select:focus{outline:none;border-color:var(--teal);background:#fff}
+.form-submit{width:100%;background:var(--petrol);color:#fff;border:none;padding:16px;border-radius:14px;font-family:'Tajawal';font-weight:700;font-size:1.05rem;cursor:pointer;transition:.25s}
+.form-submit:hover{background:var(--teal)}
+
+/* Footer */
+footer{background:var(--ink);color:#c3d6d6;padding:60px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:40px}
+.foot-grid .logo{color:#fff;margin-bottom:16px}
+.foot-grid .logo-mark{background:var(--teal)}
+footer p{font-size:.94rem;color:#8fa9a9}
+footer h4{color:#fff;font-family:'Readex Pro';margin-bottom:18px;font-size:1.05rem}
+footer ul{list-style:none}
+footer ul li{margin-bottom:11px}
+footer ul a{color:#a4bcbc;font-size:.94rem;transition:.2s}
+footer ul a:hover{color:var(--mint)}
+.foot-contact div{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:.94rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;text-align:center;font-size:.86rem;color:#7a9494}
+
+/* WhatsApp float */
+.wa{position:fixed;bottom:26px;left:26px;z-index:200;width:60px;height:60px;background:#25d366;border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.45);font-size:1.9rem;color:#fff;transition:.25s;animation:pulse 2.4s infinite}
+.wa:hover{transform:scale(1.1)}
+@keyframes pulse{0%{box-shadow:0 10px 30px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,.4)}70%{box-shadow:0 10px 30px rgba(37,211,102,.45),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 10px 30px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,0)}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:.7s cubic-bezier(.2,.7,.3,1)}
+.reveal.on{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .hero-grid,.why-grid,.book-box{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:2.5rem}
+  .serv-grid,.testi-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .book-box{padding:34px 24px}
+  .sec-head h2{font-size:2rem}
+  .why-title{font-size:1.9rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#" class="logo"><span class="logo-mark">🦷</span> عيادات بسمة</a>
+    <div class="nav-links">
+      <a href="#services">خدماتنا</a>
+      <a href="#why">ليش بسمة</a>
+      <a href="#testi">آراء المرضى</a>
+      <a href="#book" class="nav-cta">احجز موعدك</a>
+    </div>
+    <button class="burger" id="burger" aria-label="فتح القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">خدماتنا</a>
+    <a href="#why">ليش بسمة</a>
+    <a href="#testi">آراء المرضى</a>
+    <a href="#book">احجز موعدك</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-card reveal on">
+      <span class="pill"><span class="dot"></span> نستقبل مرضى جدد هذا الأسبوع</span>
+      <h1>ابتسامتك تستحق <em><span>عناية استثنائية</span></em></h1>
+      <p>عيادة أسنان متكاملة في قلب الرياض، بأحدث الأجهزة وطاقم متخصص يهتم براحتك قبل كل شيء. علاج بدون ألم، ومواعيد تحترم وقتك.</p>
+      <div class="btns">
+        <a href="#book" class="btn btn-main">احجز كشف مجاني ←</a>
+        <a href="#services" class="btn btn-ghost">تعرّف على خدماتنا</a>
+      </div>
+      <div class="hero-trust">
+        <div><b>+12</b><span>سنة خبرة</span></div>
+        <div><b>+8,000</b><span>مريض سعيد</span></div>
+        <div><b>4.9★</b><span>تقييم العملاء</span></div>
+      </div>
+    </div>
+    <div class="hero-card reveal on">
+      <div class="hero-visual">
+        <h3>احجز موعدك بسهولة</h3>
+        <p class="sub">اختر الوقت المناسب لك، ونتكفّل بالباقي</p>
+        <div class="slot"><span class="ic">🕘</span><div><b>السبت – الخميس</b><small>٩ صباحًا – ١١ مساءً</small></div></div>
+        <div class="slot"><span class="ic">🚗</span><div><b>موقف خاص مجاني</b><small>سهولة الوصول من كل الاتجاهات</small></div></div>
+        <div class="slot"><span class="ic">💳</span><div><b>تقسيط عبر تابي وتمارا</b><small>ابدأ علاجك بدون قلق مالي</small></div></div>
+      </div>
+      <div class="float-badge">
+        <div><span class="stars">★★★★★</span><b>موثوقة</b><small>معتمدة من وزارة الصحة</small></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">خدماتنا</span>
+      <h2>كل ما تحتاجه ابتسامتك تحت سقف واحد</h2>
+      <p>من الفحص الدوري إلى أدق علاجات التجميل، فريقنا جاهز للعناية بك في كل مرحلة.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card reveal"><div class="serv-ic">✨</div><h3>تبييض الأسنان</h3><p>تبييض احترافي بتقنية الليزر يمنحك نتيجة واضحة من أول جلسة وبأمان تام.</p><div class="serv-price">يبدأ من ٦٩٩ ريال</div></div>
+      <div class="serv-card reveal"><div class="serv-ic">🦷</div><h3>تقويم الأسنان</h3><p>تقويم معدني وشفاف (Clear Aligners) لابتسامة متناسقة بخطة علاج واضحة.</p><div class="serv-price">استشارة مجانية</div></div>
+      <div class="serv-card reveal"><div class="serv-ic">🔧</div><h3>زراعة الأسنان</h3><p>زراعات بأجود الأنواع العالمية بضمان طويل، تعيد لك الثقة في الأكل والابتسام.</p><div class="serv-price">يبدأ من ١,٨٠٠ ريال</div></div>
+      <div class="serv-card reveal"><div class="serv-ic">🪥</div><h3>تنظيف وتلميع</h3><p>جلسة تنظيف عميق وإزالة الجير للحفاظ على صحة لثتك ونضارة أسنانك.</p><div class="serv-price">١٥٠ ريال فقط</div></div>
+      <div class="serv-card reveal"><div class="serv-ic">😁</div><h3>ابتسامة هوليود</h3><p>فينير وعدسات لاصقة بتصميم يناسب ملامح وجهك لأجمل ابتسامة ممكنة.</p><div class="serv-price">حسب الحالة</div></div>
+      <div class="serv-card reveal"><div class="serv-ic">🧒</div><h3>أسنان الأطفال</h3><p>عناية لطيفة ومريحة لأطفالك في بيئة ودّية تحبّب لهم زيارة الطبيب.</p><div class="serv-price">كشف ١٠٠ ريال</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why">
+  <div class="wrap why-grid">
+    <div class="reveal">
+      <span class="eyebrow">ليش تختار بسمة</span>
+      <h2 class="why-title">تجربة علاج مريحة من أول اتصال</h2>
+      <ul class="why-list">
+        <li><span class="check">✓</span><div><b>علاج بدون ألم</b><p>تقنيات تخدير حديثة وطاقم لطيف يجعل زيارتك مريحة تمامًا.</p></div></li>
+        <li><span class="check">✓</span><div><b>أجهزة أشعة رقمية</b><p>تشخيص دقيق وسريع بأقل تعرّض ممكن للأشعة.</p></div></li>
+        <li><span class="check">✓</span><div><b>تعقيم بمعايير عالمية</b><p>غرف معقّمة بالكامل وأدوات تُستخدم لمرة واحدة لسلامتك.</p></div></li>
+        <li><span class="check">✓</span><div><b>خطة علاج وأسعار واضحة</b><p>تعرف تكلفتك كاملة قبل ما تبدأ، بدون أي مفاجآت.</p></div></li>
+      </ul>
+    </div>
+    <div class="why-visual reveal">
+      <div class="why-stat"><span class="num">98%</span><span>من مرضانا ينصحون بنا أصدقاءهم وعائلاتهم</span></div>
+      <div class="why-stat"><span class="num">15د</span><span>متوسط وقت الانتظار قبل دخولك للطبيب</span></div>
+      <div class="why-stat"><span class="num">+20</span><span>طبيب واختصاصي في مختلف تخصصات الأسنان</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="testi" class="testi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">آراء مرضانا</span>
+      <h2>ابتسامات نفتخر فيها</h2>
+      <p>لأن رضا مرضانا هو أهم إنجاز نحققه كل يوم.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal"><div class="stars">★★★★★</div><p>«أفضل تجربة عيادة أسنان مريت فيها. من الاستقبال لين انتهاء العلاج كل شي كان مرتب واحترافي. سويت تبييض والنتيجة فاقت توقعي.»</p><div class="testi-person"><span class="avatar">ن</span><div><b>نورة العتيبي</b><small>الرياض</small></div></div></div>
+      <div class="testi-card reveal"><div class="stars">★★★★★</div><p>«كنت خايف من الزراعة بس الدكتور شرح لي كل شي بوضوح وطمنّي. العملية مرت بدون أي ألم والمتابعة بعدها ممتازة. أنصح فيهم بشدة.»</p><div class="testi-person"><span class="avatar">م</span><div><b>محمد الشهري</b><small>الرياض</small></div></div></div>
+      <div class="testi-card reveal"><div class="stars">★★★★★</div><p>«ودّيت أطفالي وكانوا خايفين، بس طاقم العيادة تعامل معهم بلطف صار عندهم حماس يرجعون! مكان نظيف ومواعيد دقيقة.»</p><div class="testi-person"><span class="avatar">س</span><div><b>سارة القحطاني</b><small>الرياض</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="book">
+  <div class="wrap">
+    <div class="book-box reveal">
+      <div>
+        <span class="eyebrow">احجز الآن</span>
+        <h2>خطوة واحدة تفصلك عن ابتسامة أجمل</h2>
+        <p>عبّي بياناتك وبنتواصل معك خلال ساعة لتأكيد موعدك. الكشف الأول مجاني تمامًا.</p>
+        <div class="book-feat"><span class="ic">✓</span> كشف أول مجاني بدون التزام</div>
+        <div class="book-feat"><span class="ic">✓</span> تأكيد الموعد خلال ٦٠ دقيقة</div>
+        <div class="book-feat"><span class="ic">✓</span> إمكانية التقسيط عبر تابي وتمارا</div>
+      </div>
+      <div>
+        <form id="bookForm">
+          <div class="form-field"><label for="f-name">الاسم</label><input id="f-name" type="text" placeholder="اكتب اسمك" required></div>
+          <div class="form-field"><label for="f-phone">رقم الجوال</label><input id="f-phone" type="tel" placeholder="05xxxxxxxx" required></div>
+          <div class="form-field"><label for="f-serv">الخدمة المطلوبة</label>
+            <select id="f-serv"><option>تبييض الأسنان</option><option>تقويم</option><option>زراعة</option><option>تنظيف</option><option>ابتسامة هوليود</option><option>أسنان الأطفال</option></select>
+          </div>
+          <button type="submit" class="form-submit">أرسل الطلب واحجز موعدي</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#" class="logo"><span class="logo-mark">🦷</span> عيادات بسمة</a>
+        <p>عيادة أسنان متكاملة في الرياض، نقدّم رعاية طبية بمعايير عالمية وابتسامة تدوم.</p>
+      </div>
+      <div><h4>خدماتنا</h4><ul><li><a href="#services">تبييض الأسنان</a></li><li><a href="#services">تقويم</a></li><li><a href="#services">زراعة</a></li><li><a href="#services">ابتسامة هوليود</a></li></ul></div>
+      <div><h4>روابط</h4><ul><li><a href="#services">الخدمات</a></li><li><a href="#why">ليش بسمة</a></li><li><a href="#testi">آراء المرضى</a></li><li><a href="#book">احجز موعد</a></li></ul></div>
+      <div class="foot-contact"><h4>تواصل معنا</h4>
+        <div>📍 حي الملقا، الرياض</div>
+        <div>📞 ٩٢٠ ٠٠٠ ٠٠٠</div>
+        <div>🕘 يوميًا ٩ص – ١١م</div>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 عيادات بسمة — نموذج تصميم لعرض الأعمال، وليس عيادة حقيقية.</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/966500000000?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF" class="wa" target="_blank" rel="noopener" title="تواصل عبر واتساب" aria-label="تواصل عبر واتساب">💬</a>
+
+<script>
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => {
+  nav.style.boxShadow = scrollY > 20 ? '0 6px 24px rgba(13,74,78,.08)' : 'none';
+});
+
+// قائمة الجوال
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', open);
+  burger.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mobileMenu.classList.remove('open');
+  burger.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+}));
+
+// نموذج الحجز
+document.getElementById('bookForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = '✓ تم استلام طلبك، بنتواصل معك قريبًا';
+  btn.style.background = '#3ec98a';
+});
+
+// ظهور تدريجي عند التمرير
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) e.target.classList.add('on');
+}), { threshold: .15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
